@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+import coffeeBeans from "../assets/hero-coffee-beans.png";
+import coffeeCup from "../assets/hero-coffee.png";
+---
+
+<header class="py-8 md:py-20 relative">
+  <Image src={coffeeBeans} alt="" class="absolute right-0 top-0 -z-10" />
+
+  <div
+    class="bg-accent1 absolute w-1/2 md:w-1/3 right-0 top-0 h-2/3 md:h-full -z-10"
+  >
+  </div>
+
+  <div
+    class="container flex flex-wrap-reverse justify-around items-center gap-12"
+  >
+    <div class="grid gap-4 md:basis-1/3">
+      <h1
+        class="text-3xl md:text-4xl lg:text-6xl font-bold text-dark1 text-balance"
+      >
+        Freshly Brewed <span class="text-accent1">Coffee</span> for Every
+        <span class="text-accent1">Moment</span>
+      </h1>
+
+      <p class="text-balance max-w-prose">
+        Experience the rich aroma and exceptional taste of our handcrafted
+        coffee. From classic favorites to signature blends, every cup is
+        carefully brewed to make your day a little brighter.
+      </p>
+
+      <Link href="#" size={"large"} classes="group">
+        <span>Order Now</span>
+
+        <div
+          class="p-1 bg-accent1 rounded-full text-white group-hover:bg-accent2"
+        >
+          <Icon name="cart" size={18} />
+        </div>
+      </Link>
+    </div>
+
+    <Image src={coffeeCup} alt="coffee cup" class="md:basis-1/3" />
+  </div>
+</header>
